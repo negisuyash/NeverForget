@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YOUR SHOPPING LIST </title>
+
+</head>
+<body style="max-width: 500px; margin: auto;">
+	<br><br>
+	<h5>this shopping list was prepared at : {{date}}</h5>
+	<br>
+	<h2>HELLO {{ name }},YOUR SHOPPING LIST IS:</h2><br><br>
+	{% for item in shopping_list %}
+	<input type="checkbox">&nbsp&nbsp{{ item }}<br>
+	{% endfor %}
+
+	<br><br><br>
+	WE HAVE SENT YOU AN EMAIL FOR THIS LIST ON  <b style="color:blue;">{{ mail }}</b>
+
+	<br><br><br><br>
+	<a href="/">goto homepage</a>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WELCOME</title>
+	<script type="text/javascript">
+		function valid()
+		{
+			var str=""
+			if(document.getElementById("name").value==null||document.getElementById("name").value=="")
+			{
+				str+="please enter your name";
+			}
+			if(document.getElementById("mail").value==null||document.getElementById("mail").value=="")
+			{
+				str+="<br>please enter your email";
+			}
+			if(document.getElementById("data").value==null||document.getElementById("data").value=="")
+			{
+				str+="<br>please enter some shopping list";
+			}
+			if(str!="")
+			{
+				document.getElementById("msg").innerHTML="<i style='color:red; size:8px;'>"+str+"</style></i>"
+				return false;
+			}
+			return true;
+
+		}
+	</script>
+</head>
+<body style="margin: auto; padding-left: 150px; padding-top: 30px;">
+	<h2 ><b>WELCOME TO NEVERFORGET.COM</b></h2>
+	<h5><b>easy steps that never lets you forget....</b></h5>
+<br><br>
+<div style="padding-right: 80px;">
+<div style="float: right;   border: 15px solid green; padding: 5px;">
+	<h5>OUR LATEST CUSTOMERS:    </h5>
+	<ul>
+		{% for i in users%}
+		<li style="color:grey;">{{i}}</li>
+		{%endfor%}
+	</ul>
+</div>
+</div>
+<form method="POST" onsubmit="return valid()">
+	NAME*:<input type="text" id="name"  name="name"><br><br>
+	EMAIL*:<input type="email" id="mail" name="mail"><br><br>
+	<b>please enter the shopping list (separated by , )*</b>:<input type="text" id="data" name="data">
+	<div id="msg"></div>
+	<br><div style="padding-left: 70px;"><button type="submit" style="padding:5px;">THATS ALL</button></div>
+</form>
+<br><br>
+<a href="/search">already have a list</a>
+</body>
+</html>

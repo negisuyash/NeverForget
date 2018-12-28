@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search your shopping list</title>
+	<script type="text/javascript">
+		function valid()
+		{
+			if(document.getElementById("email").value=="")
+			{
+				msg="<i>please enter the mail id</i>";
+				document.getElementById("msg").innerHTML=msg;
+				return false;
+			}
+			return true;
+
+		}
+	</script>
+</head>
+<body style="max-width: 500px; margin: auto;">
+	<br><br><br>
+	<form onsubmit="return valid()" method="POST">
+		ENTER EMAIL HERE:<input type="email" name="email" id="email">
+		<br>
+		<div id="msg" style="color:red;"></div>
+		<br><b></b>
+		<div style="padding-left: 120px;"><button type="submit" style="padding: 5px;">SEARCH</button></div>
+	</form>
+
+	<br><br>
+	YOUR DATA WILL BE DISPLAYED HERE:<br><br><br>
+	your name:<b>&nbsp{{name}}</b><br><br>
+	your email:<b>&nbsp{{mail}}</b><br><br>
+    time created:<b>&nbsp{{datetime}}</b><br>
+    <br>YOUR SHOPPING LIST:
+    <ul>
+    {%for i in shopping_list%}
+    <li><b>{{i}}</b></li><br>
+    {%endfor%}
+	</ul>
+
+
+</body>
+</html>
